@@ -1,6 +1,6 @@
-This project is about Shell basics. There are 17 scripts which do the following:
+This project is about Shell permissions. There are 17 scripts which do the following:
 
-0.Change your user ID to betty
+0. Change your user ID to betty
 1. Print the effective userid of the current user
 2. Print all the groups the current user is part of
 3. Change the owner of the file hello to the user betty
