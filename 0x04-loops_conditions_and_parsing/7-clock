@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# This script displaysthe time for 12 hours and 59 minutes
+h=0
+m=1
+echo "Hour: $h"
+while [ $m -lt 60 ]
+do
+	echo "$m"
+	if [ $m -eq 59 ] && [ $h -eq 12 ]
+	then
+	    break
+	fi
+	if [ $m -eq 59 ]
+	then
+		h=$(( h+1 ))
+		echo "Hour: $h"
+		m=0
+	fi
+	m=$(( m+1 ))
+done
