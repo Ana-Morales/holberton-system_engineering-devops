@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Displays information about subdomains
+# shellcheck disable=SC2086
+
+func()
+{
+    sub="$2"
+    dom="$1"
+    dig "$sub.$dom" | grep -A1 'ANSWER SECTION:' | tail -1 | awk -v sb=$sub '{ print "The subdomain", sb, "is a", $4, "record and points to", $5}'
+}
+if [ -z "$2" ]
+then
+    func "$1" "www"
+    func "$1" "lb-01"
+    func "$1" "web-01"
+    func "$1" "web-02"
+else
+    func "$1" "$2"
+fi
